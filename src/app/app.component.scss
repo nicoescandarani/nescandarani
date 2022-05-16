@@ -1,0 +1,23 @@
+.main-wrapper {
+  display: flex;
+}
+
+.main-container {
+  padding: 14px;
+  padding-top: 80px;
+  padding-left: 324px;
+  max-width: 1800px;
+  width: 100%;
+}
+
+app-navbar {
+  max-width: 230px;
+  width: 100%;
+  position: fixed;
+}
+
+@media (max-width: 1440px) {
+  .main-container {
+    padding-right: 80px;
+  }
+}

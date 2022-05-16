@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1A2239;
+}
+
+body {
+  background: linear-gradient(#DECFFF, #FFF9E2);
+  min-height: 100vh;
+  background-image: url(./assets/img/motion-background.svg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+@keyframes move-left-right {
+  0% {
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

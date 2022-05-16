@@ -1,0 +1,26 @@
+$margin: 100px;
+
+.main-wrapper {
+    height: 100vh;
+}
+
+h1 {
+    font-size: 60px;
+    margin-bottom: $margin;
+    opacity: 0;
+}
+
+h2 {
+    font-size: 40px;
+    margin-bottom: $margin;
+    opacity: 0;
+}
+
+button {
+    padding: 14px;
+    border-radius: 6px;
+    background-color: #FFF9E2;
+    font-size: 24px;
+    border: none;
+    opacity: 0;
+}

@@ -21,6 +21,10 @@ li {
   width: calc(100% + $offset);
 }
 
+.logo-wrapper {
+  height: 200px;
+}
+
 .link {
   cursor: pointer;
   padding: 14px;

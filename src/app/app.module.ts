@@ -8,6 +8,14 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { WorksComponent } from './works/works.component';
 import { AboutComponent } from './about/about.component';
+import { NicoLogoComponent } from './nico-logo/nico-logo.component';
+import { SpheresCanvasComponent } from './spheres-canvas/spheres-canvas.component';
+
+import { NgtColorPipeModule, NgtCoreModule } from '@angular-three/core';
+import { NgtAmbientLightModule, NgtPointLightModule } from '@angular-three/core/lights';
+import { NgtPrimitiveModule } from '@angular-three/core/primitive';
+import { NgtSobaLoaderModule } from '@angular-three/soba/loaders';
+import { NgtSobaOrbitControlsModule } from '@angular-three/soba/controls';
 
 @NgModule({
   declarations: [
@@ -16,11 +24,20 @@ import { AboutComponent } from './about/about.component';
     FooterComponent,
     HomeComponent,
     WorksComponent,
-    AboutComponent
+    AboutComponent,
+    NicoLogoComponent,
+    SpheresCanvasComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgtCoreModule,
+    NgtSobaLoaderModule,
+    NgtPrimitiveModule,
+    NgtSobaOrbitControlsModule,
+    NgtAmbientLightModule,
+    NgtPointLightModule,
+    NgtColorPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

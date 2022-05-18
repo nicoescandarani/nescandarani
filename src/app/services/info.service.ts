@@ -10,29 +10,35 @@ export class InfoService {
 
   works: Work[] = [
     {
-      url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-      title: 'Angular',
-      description: 'Angular is a TypeScript-based open-source web application platform led by the Angular Team at Google and by a community of individuals and corporations. Angular is a complete rewrite from the same team that built AngularJS.',
-      image: 'angular.png'
+      url: 'https://nescanda.com/kingdomFight/',
+      title: 'Fight For Rywhndyr',
+      description: 'Simple and fun RPG game.',
+      image: '../../assets/img/fightForRywndhyr.png',
     },
     {
-      url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-      title: 'React',
-      description: 'React is a JavaScript library for building user interfaces. It is maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile applications.',
-      image: 'react.png'
+      url: 'https://nescanda.com/guessTheNumber/',
+      title: 'Guess The Number Game',
+      description: 'Guess The Number Game.',
+      image: '../../assets/img/GuessTheNumberGame.png',
     },
     {
-      url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-      title: 'Vue',
-      description: 'Vue.js is a progressive framework for building user interfaces. It is maintained by a community of individual developers and companies. Vue can be used as a base in the development of single-page or mobile applications.',
-      image: 'vue.png'
+      url: 'https://nescanda.com/piano/',
+      title: 'Piano',
+      description: 'One octave piano fully made with JavaScript.',
+      image: '../../assets/img/Piano.png',
     },
     {
-      url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-      title: 'Svelte',
-      description: 'Svelte is a JavaScript library for building user interfaces. It is maintained by Facebook and a community of individual developers and companies. Svelte can be used as a base in the development of single-page or mobile applications.',
-      image: 'svelte.png'
+      url: 'https://nescanda.com/tictactoe/',
+      title: 'Space Tic - Tac - Toe',
+      description: 'Simple and fun tic - tac - toe game with mouse parallax.',
+      image: '../../assets/img/Tictactoe.jpeg',
     },
+    {
+      url: 'https://www.nescanda.com/space/',
+      title: 'Let´s Go To Space',
+      description: 'Simple and fun interactive website with mouse parallax and animations. Try clicking the astronaut in the middle.',
+      image: '../../assets/img/Space.png',
+    }
   ];
 
   techs: Tech[] = [
@@ -43,6 +49,10 @@ export class InfoService {
     {
       name: 'Vuejs',
       img: '../assets/img/vuejs.svg'
+    },
+    {
+      name: 'Nodejs',
+      img: '../assets/img/nodejs.svg'
     },
     {
       name: 'Java',

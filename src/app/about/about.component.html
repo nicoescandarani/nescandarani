@@ -9,7 +9,14 @@
   <div class="right">
     <div class="techs">
       <div *ngFor="let tech of techs; let i = index" class="tech">
-        <div [ngClass]="{
+        <div class="tech-item tech-item--alignment" [ngClass]="{
+          'tech-icon': true,
+          'right-aligned': (i + 1) % 2 === 0
+        }">
+          <img src="{{tech.img}}" alt="{{tech.name}}">
+          <p>{{tech.name}}</p>
+        </div>
+        <div class="tech-item tech-item--mobile-alignment" [ngClass]="{
           'tech-icon': true,
           'right-aligned': i % 3 === 2,
           'center-aligned': i % 3 === 1

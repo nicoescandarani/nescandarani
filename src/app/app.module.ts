@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { WorksComponent } from './works/works.component';
 import { AboutComponent } from './about/about.component';
 import { NicoLogoComponent } from './nico-logo/nico-logo.component';
+import { SpheresCanvasComponent } from './spheres-canvas/spheres-canvas.component';
 
 import { NgtColorPipeModule, NgtCoreModule } from '@angular-three/core';
 import { NgtAmbientLightModule, NgtPointLightModule } from '@angular-three/core/lights';
@@ -24,7 +25,8 @@ import { NgtSobaOrbitControlsModule } from '@angular-three/soba/controls';
     HomeComponent,
     WorksComponent,
     AboutComponent,
-    NicoLogoComponent
+    NicoLogoComponent,
+    SpheresCanvasComponent
   ],
   imports: [
     BrowserModule,

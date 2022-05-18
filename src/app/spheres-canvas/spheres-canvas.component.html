@@ -1,0 +1,27 @@
+<ngt-canvas>
+  <ngt-ambient-light [intensity]="0.5"></ngt-ambient-light>
+  <ngt-point-light [intensity]="0.5" [position]="[1, 1, 0]"></ngt-point-light>
+  <ngt-point-light [intensity]="0.5" [position]="[-1, 1, 0]"></ngt-point-light>
+  <ngt-point-light [intensity]="0.5" [position]="[1, -1, 0]"></ngt-point-light>
+  <!-- ! Spheres 1 -->
+  <ngt-primitive [position]="[1, 1, 0]" *ngIf="sphere1$ | async as sphere1" [object]="sphere1.scene"></ngt-primitive>
+  <ngt-primitive [position]="[-1, 2, 0]" *ngIf="sphere2$ | async as sphere2" [object]="sphere2.scene"></ngt-primitive>
+  <ngt-primitive [position]="[0, 0, 1.5]" *ngIf="sphere3$ | async as sphere3" [object]="sphere3.scene"></ngt-primitive>
+  <ngt-primitive [position]="[1.5, 2, 0.5]" *ngIf="sphere4$ | async as sphere4" [object]="sphere4.scene"></ngt-primitive>
+  <ngt-primitive [position]="[-1.5, 0.8, 0.7]" *ngIf="sphere5$ | async as sphere5" [object]="sphere5.scene"></ngt-primitive>
+  <ngt-primitive [position]="[-1.4, 1, -0.5]" *ngIf="sphere6$ | async as sphere6" [object]="sphere6.scene"></ngt-primitive>
+  <ngt-primitive [position]="[1.2, 0.4, -1.5]" *ngIf="sphere7$ | async as sphere7" [object]="sphere7.scene"></ngt-primitive>
+  <ngt-primitive [position]="[-1.7, -0.4, 0.5]" *ngIf="sphere8$ | async as sphere8" [object]="sphere8.scene"></ngt-primitive>
+
+  <!-- ! Spheres 2 -->
+  <ngt-primitive [position]="[0.2, 0.5, -1]" *ngIf="sphere9$ | async as sphere9" [object]="sphere9.scene"></ngt-primitive>
+  <ngt-primitive [position]="[0, 1.2, -2]" *ngIf="sphere10$ | async as sphere10" [object]="sphere10.scene"></ngt-primitive>
+  <ngt-primitive [position]="[-1.5, -0.9, -1.5]" *ngIf="sphere11$ | async as sphere11" [object]="sphere11.scene"></ngt-primitive>
+  <ngt-primitive [position]="[1.2, 1.4, 1]" *ngIf="sphere12$ | async as sphere12" [object]="sphere12.scene"></ngt-primitive>
+  <ngt-primitive [position]="[-1, -0.8, -0.7]" *ngIf="sphere13$ | async as sphere13" [object]="sphere13.scene"></ngt-primitive>
+  <ngt-primitive [position]="[1.4, -1, 1.1]" *ngIf="sphere14$ | async as sphere14" [object]="sphere14.scene"></ngt-primitive>
+  <ngt-primitive [position]="[0.8, 1.1, 0]" *ngIf="sphere15$ | async as sphere15" [object]="sphere15.scene"></ngt-primitive>
+  <ngt-primitive [position]="[1.8, 1.8, 0.5]" *ngIf="sphere16$ | async as sphere16" [object]="sphere16.scene"></ngt-primitive>
+
+  <ngt-soba-orbit-controls #controls="ngtSobaOrbitControls" [target]="[0, 0.5, 0]" (ready)="setInitialShperes(controls)"></ngt-soba-orbit-controls>
+  </ngt-canvas>

@@ -7,7 +7,6 @@
 }
 
 body {
-  background: linear-gradient(#DECFFF, #FFF9E2);
   min-height: 100vh;
   background-image: url(./assets/img/motion-background.svg);
   background-size: cover;
@@ -19,6 +18,11 @@ button {
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 @keyframes move-left-right {

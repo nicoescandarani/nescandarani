@@ -1,138 +1,20 @@
-$offset: 90px;
-
 nav {
-  background-color: #ffffffc9;
-  padding: 14px;
-  height: 100vh;
-}
-
-h2 {
-  font-size: 48px;
-  margin-bottom: 80px;
-  font-weight: 600;
-  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-bottom: 70px;
+  height: 70px;
 }
 
 ul {
   list-style: none;
-}
+  display: flex;
 
-li {
-  width: calc(100% + $offset);
-}
-
-.logo-wrapper {
-  height: 200px;
-  position: relative;
-  cursor: pointer;
-}
-
-app-spheres-canvas {
-  top: 0;
-  left: 0;
-  height: 100%;
-  pointer-events: none;
-}
-
-.drag-me {
-  position: absolute;
-  top: 0;
-  right: -50%;
-  cursor: pointer;
-
-  &__text {
-    transform-origin: 0 0;
-    transform: translateX(-20px) rotate(-10deg);
-
-    p {
-      display: inline;
-      font-weight: 600;
-      font-style: italic;
-      font-size: 18px;
-    }
-  }
-
-  img {
-    position: absolute;
-    height: 100px;
-    right: 40px;
-    top: 20px;
-    opacity: 0.7;
-    transform: rotate(-10deg);
-  }
-}
-
-.link {
-  cursor: pointer;
-  padding: 14px;
-  background-color: #DECFFF;
-  border-radius: 6px;
-  display: block;
-  font-size: 24px;
-  margin-bottom: 40px;
-  width: calc(100% - $offset);
-  background-color: #DECFFF;
-  transition: all ease-in-out 0.5s;
-  position: relative;
-  text-decoration: none;
-  z-index: 1;
-}
-
-.link::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background:
-    linear-gradient(
-      90deg,
-    rgba(222,207,255,1) 74%,
-    rgba(255,249,226,1) 70%
-    );
-  z-index: -1;
-  width: 0;
-  transform-origin: left;
-  border-radius: 6px;
-  transition: all ease-in-out 0.2s;
-}
-
-.link:hover::before,
-.link:focus::before {
-  width: 100%;
-}
-
-.link:hover {
-  width: 100%;
-}
-
-.link {
-  &--active {
-    width: 100%;
-
-    &::before {
-      width: 100%;
-    }
-  }
-}
-
-@media (max-width: 1000px) {
-  li {
-    width: calc(100% + 72px);
-  }
-
-  .link {
-    width: calc(100% - 72px);
-  }
-
-  .link {
-    &--active {
-      width: 100%;
-  
-      &::before {
-        width: 100%;
-      }
-    }
+  a {
+    display: block;
+    padding: 4px 8px;
   }
 }

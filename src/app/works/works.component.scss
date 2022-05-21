@@ -1,65 +1,189 @@
-h2 {
-  font-size: 60px;
-  margin-bottom: 100px;
-  opacity: 0;
-}
+$transition: all 0.5s ease-in-out;
+$previewDimensions: 140px;
 
 .works-wrapper {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  min-height: 100vh;
+  max-width: 1728px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+}
+
+.works-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80%;
+  z-index: -1;
+  height: 100%;
+  border-radius: 36px 0 0 0;
+  background-color: #2A2B36;
+  padding-top: 20px;
+}
+
+h2 {
+  font-size: 32px;
+  margin-bottom: 80px;
+}
+
+.works {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  padding-top: 80px;
 }
 
 .work {
-  margin-bottom: 100px;
-  opacity: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-bottom: 80px;
 
-  h3 {
-    font-size: 30px;
-    margin-bottom: 10px;
-  }
+  &--inverted {
+    flex-direction: row-reverse;
 
-  a {
-    position: relative;
-    display: block;
-    border-radius: 6px;
-  }
+    .work-card {
+      &:hover {
+        + .work__preview {
+          left: 100px;
+        }
+      }
+    }
 
-  a:hover > .work__description {
-    height: 100%;
-  }
+    .work-card__info {
+      left: 0;
+      text-align: end;
 
-  &__description {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 0;
-    width: 100%;
-    background-color: #000000d3;
-    border-radius: 6px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    overflow: hidden;
-    transition: all 0.3s ease-in-out;
-    overflow-y: auto;
+      img {
+        left: -40px;
+        transform: rotate(180deg);
+      }
+    }
 
-    p {
-      color: #ffffff;
-      font-size: 30px;
-      padding: 40px;
-      width: 100%;
+    .work__preview {
+      left: 0;
     }
   }
 
-  img {
-    max-width: 100%;
-    border-radius: 6px;
+  &__preview {
+    height: $previewDimensions;
+    width: $previewDimensions;
+    min-width: $previewDimensions;
+    border-radius: 50%;
+    transition: $transition;
+    overflow: hidden;
+    animation: previewAnimation 5s infinite ease-in-out;
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+    position: absolute;
+    right: 0;
+    top: 40%;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
   }
 }
 
-@media (max-width: 1200px) {
-  .works-wrapper {
-    display: block;
+.work-card {
+  height: 410px;
+  width: 800px;
+  border-radius: 6px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+
+  &:hover {
+    .work-card__overlay {
+      background-color: #1c1c1cef;
+    }
+
+    .work-card__info {
+      max-height: 100%;
+      max-width: 100%;
+    }
+    
+    .work-card__short-description {
+      margin-bottom: 20px;
+    }
+
+    .work-card__description {
+      height: 100%;
+      opacity: 1;
+      transform: translateZ(200px);
+    }
+
+    + .work__preview {
+      height: 200px;
+      width: 400px;
+      right: 100px;
+      border-radius: 6px;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1c1c1cb9;
+    border-radius: 6px;
+    transition: $transition;
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+
+  &__info {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    bottom: 0;
+    font-size: 24px;
+    transition: $transition;
+    max-height: 150px;
+    height: 100%;
+    max-width: 360px;
+    width: 100%;
+  }
+
+  &__info-content {
+    position:  relative;
+    padding: 40px 60px;
+
+    img {
+      position: absolute;
+      width: 64px;
+      object-fit: contain;
+      top: 0;
+      right: -40px;
+    }
+
+    h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      transform: translateZ(50px);
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
+
+  &__description {
+    font-size: 20px !important;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: $transition;
+    transform: translateZ(200px);
   }
 }

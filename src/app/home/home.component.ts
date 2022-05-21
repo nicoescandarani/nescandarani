@@ -1,5 +1,5 @@
-import { AnimationsService } from '../services/animations.service';
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import VanillaTilt from 'vanilla-tilt';
 
 @Component({
   selector: 'app-home',
@@ -7,20 +7,20 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, AfterViewInit {
+  @ViewChild('tilt') tilt: ElementRef | undefined;
 
-  constructor(private animationsService: AnimationsService) { }
+  constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   ngAfterViewInit(): void {
-    this.addAnimations();
-  }
-
-  addAnimations(): void {
-    const elements:HTMLElement[] = [];
-    const PreElements = Array.from(document.querySelectorAll('.home__title, .home__subtitle, .home__download')) as HTMLElement[];
-    elements.push(...PreElements);
-    this.animationsService.createMultipleAnimations(elements, 'move-left-right', 0.5, 0, 0.1);
+    console.log(this.tilt);
+    
+    VanillaTilt.init(this.tilt?.nativeElement, {
+      reverse: true,
+      perspective: 2000,
+      max: 7,
+      gyroscope: true
+    });
   }
 }

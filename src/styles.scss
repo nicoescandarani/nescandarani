@@ -3,15 +3,13 @@
   padding: 0;
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  color: #1A2239;
+  color: #ffffff;
 }
 
 body {
   min-height: 100vh;
-  background-image: url(./assets/img/motion-background.svg);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  width: 100%;
+  background-color: #1C1C1C;
 }
 
 button {
@@ -25,12 +23,45 @@ a {
   color: inherit;
 }
 
+@keyframes move-right-left-normal {
+  0% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 @keyframes move-left-right {
   0% {
-    transform: translateX(-100px);
+    right: 0;
+  }
+  100% {
+    right: -40px;
+  }
+}
+
+@keyframes move-right-left {
+  0% {
+    transform: translateX(100px);
   }
   100% {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(-84px) translateZ(50px) scale(0.9);
   }
+}
+
+@keyframes previewAnimation {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 15px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-10px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
 }

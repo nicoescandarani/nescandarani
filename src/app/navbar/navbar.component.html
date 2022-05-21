@@ -1,21 +1,13 @@
 <nav>
+  <a
+    href="#"
+    routerLink=""
+    routerLinkActive="link--active"
+    [routerLinkActiveOptions]="{exact: true}"
+  >
+    <h1>Nicolas Escandarani</h1>
+  </a>
   <ul>
-    <h2
-      routerLink=""
-      class="name-link"
-    >
-    &#60;N /&#62;
-    </h2>
-    <!-- <div class="logo-wrapper" routerLink="" routerLinkActive="link--active">
-      <app-nico-logo></app-nico-logo>
-      <div class="drag-me">
-        <div class="drag-me__text">
-          <p>Drag me</p>
-        </div>
-        <img src="../../assets/img//arrow.svg" alt="Drag me">
-      </div>
-      <app-spheres-canvas class="spheres-canvas"></app-spheres-canvas>
-    </div> -->
     <li>
       <a href="#" class="link"
         routerLink=""
@@ -27,18 +19,18 @@
     </li>
     <li>
       <a href="#" class="link"
-        routerLink="works"
-        routerLinkActive="link--active"
-      >
-        Works
-      </a>
-    </li>
-    <li>
-      <a href="#" class="link"
         routerLink="about"
         routerLinkActive="link--active"
       >
         About
+      </a>
+    </li>
+    <li>
+      <a href="#" class="link"
+        routerLink="works"
+        routerLinkActive="link--active"
+      >
+        Works
       </a>
     </li>
   </ul>

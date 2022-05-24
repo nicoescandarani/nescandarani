@@ -14,15 +14,15 @@ export class FooterComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    const footerNav = document.getElementsByClassName('footer-nav')[0];
-    const leftRef = document.getElementsByTagName('h1')[0];
-    const leftPosition = this.getClientXValue(leftRef);
-    this.positionFooterNav(leftPosition);
-    window.addEventListener('resize', () => {
-      const leftRef = document.getElementsByTagName('h1')[0];
-      const leftPosition = this.getClientXValue(leftRef);
-      this.positionFooterNav(leftPosition);
-    });
+    // const footerNav = document.getElementsByClassName('footer-nav')[0];
+    // const leftRef = document.getElementsByTagName('h1')[0];
+    // const leftPosition = this.getClientXValue(leftRef);
+    // this.positionFooterNav(leftPosition);
+    // window.addEventListener('resize', () => {
+    //   const leftRef = document.getElementsByTagName('h1')[0];
+    //   const leftPosition = this.getClientXValue(leftRef);
+    //   this.positionFooterNav(leftPosition);
+    // });
   }
 
   getClientXValue(element: HTMLElement): number {

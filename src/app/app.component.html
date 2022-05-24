@@ -1,7 +1,8 @@
 <div class="main-wrapper">
-  <div class="main-container calc-height">
-    <app-navbar></app-navbar>
-    <router-outlet class="calc-height"></router-outlet>
-    <!-- <app-footer></app-footer> -->
+  <div #overlayPrimary class="overlay overlay--primary"></div>
+  <div #overlaySecondary class="overlay overlay--secondary"></div>
+  <div class="main-container calc-height" [@slideInAnimation]="o.isActivated ? o.activatedRoute : ''">
+    <app-navbar (navigateEmmit)="hola()"></app-navbar>
+    <router-outlet #o="outlet" class="calc-height"></router-outlet>
   </div>
 </div>

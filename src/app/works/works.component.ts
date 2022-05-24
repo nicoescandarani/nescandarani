@@ -20,36 +20,15 @@ export class WorksComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.works = this.infoService.getWorks();
-    console.log(this.mathRef);
-    
   }
 
   ngAfterViewInit(): void {
-    console.log(this.previewImg);
     this.tilt?.forEach(item => {
       VanillaTilt.init(item.nativeElement, {
         reverse: true,
         glare: true,
         perspective: 4000
       });
-    });
-    // (Array.from(document.querySelectorAll('preview-img')) as HTMLElement[]).forEach(img => {
-    //   console.log(img);
-    //   console.log(`${Math.random() * 2}s`);
-      
-    //   img.style.animationDelay = `${Math.random() * 2}s`;
-    // });
-    // window.addEventListener('mousemove', this.parallax.bind(this));
-  }
-
-  private parallax(e: any): void {
-    // console.log(e);
-    
-    (Array.from(document.querySelectorAll('preview-img')) as HTMLElement[]).forEach(item => {
-      console.log(e);
-      const y = -(e.clientY - window.innerHeight / 2) / 20;
-      const x = -(e.clientX - window.innerWidth / 2) / 20;
-      item.style.transform = `translate3d(${x}px, ${y}px, 0)`;
     });
   }
 }

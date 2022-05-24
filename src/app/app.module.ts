@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,7 @@ import { NgtAmbientLightModule, NgtPointLightModule } from '@angular-three/core/
 import { NgtPrimitiveModule } from '@angular-three/core/primitive';
 import { NgtSobaLoaderModule } from '@angular-three/soba/loaders';
 import { NgtSobaOrbitControlsModule } from '@angular-three/soba/controls';
+import { ObserveVisibilityDirective } from './directives/observe-visibility.directive';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { NgtSobaOrbitControlsModule } from '@angular-three/soba/controls';
     WorksComponent,
     AboutComponent,
     NicoLogoComponent,
-    SpheresCanvasComponent
+    SpheresCanvasComponent,
+    ObserveVisibilityDirective
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,8 @@ import { NgtSobaOrbitControlsModule } from '@angular-three/soba/controls';
     NgtSobaOrbitControlsModule,
     NgtAmbientLightModule,
     NgtPointLightModule,
-    NgtColorPipeModule
+    NgtColorPipeModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

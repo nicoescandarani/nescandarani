@@ -21,11 +21,4 @@ export class AboutComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     // this.addAnimations();
   }
-
-  // addAnimations(): void {
-  //   const elements:HTMLElement[] = [];
-  //   const PreElements = Array.from(document.querySelectorAll('.about__title, .about__about, .about__subtitle, .tech')) as HTMLElement[];
-  //   elements.push(...PreElements);
-  //   this.animationsService.createMultipleAnimations(elements, 'move-left-right', 0.5, 0, 0.1);
-  // }
 }

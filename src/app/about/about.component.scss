@@ -1,3 +1,52 @@
+.about {
+  &__preamb {
+    padding-top: 30px;
+    min-height: 640px;
+    position: relative;
+
+    p {
+      font-size: 30px;
+      text-align: end;
+    }
+
+    img {
+      position: absolute;
+      max-width: 300px;
+      right: 0;
+      bottom: 0;
+      transform: translateY(30%);
+    }
+  }
+
+  &__about-me {
+    padding-top: 30px;
+    min-height: 640px;
+
+    p {
+      font-size: 30px;
+      text-align: end;
+    }
+  }
+}
+
+h3 {
+  font-size: 36px;
+  margin-bottom: 90px;
+  line-height: 50px;
+}
+
+.main-content {
+  &--about {
+    position: relative;
+  }
+}
+
+.preamb {
+  &__text {
+    max-width: 1024px;
+  }
+}
+
 .pixel-nico-wrapper {
   padding-left: 20px;
   max-width: 360px;
@@ -7,5 +56,55 @@
     margin-left: 80px;
     height: 100%;
     width: 100%;
+  }
+}
+
+.techs-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+.techs {
+  max-width: 90%;
+  width: 100%;
+  padding: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.tech {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    height: 100px;
+    max-width: 100px;
+    object-fit: contain;
+  }
+}
+
+.text-wrapper {
+  display: flex;
+  justify-content: end;
+}
+
+.underline {
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    border-radius: 30px;
+    background-color: #EEBCFF;
+    animation: underlineIn 0.3s forwards ease-in-out;
   }
 }

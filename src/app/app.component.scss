@@ -59,3 +59,9 @@ $animation: overlayAnimation 1s forwards ease-in-out;
     transform: translateX(100%);
   }
 }
+
+@media (max-width: 820px) {
+  app-footer {
+    padding-right: 40px;
+  }
+}

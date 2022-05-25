@@ -1,3 +1,47 @@
-<div class="pixel-nico-wrapper">
-  <img src="../../assets/img/pixel-nico.png" alt="Nicolas Escandarani">
+<div class="main-view-wrapper main-view-wrapper--about">
+  <div class="primary-overlay-wrapper">
+    <div class="primary-overlay primary-overlay--first"></div>
+  </div>
+  <div class="main-content main-content--no-padding main-content--about">
+    <div class="about__preamb">
+      <div class="preamb__text">
+        <h3>I'm an argentinian Front-End Web Developer always looking for new technologies and awsome ways to make the web fun and interactive.</h3>
+        <div class="text-wrapper">
+          <p class="underline">I love creating great experiences.</p>
+        </div>
+      </div>
+      <img src="../../assets/img/pixel-nico.png" alt="Nicolas Escandarani">
+    </div>
+  </div>
 </div>
+<div class="main-view-wrapper main-view-wrapper--about">
+  <div class="primary-overlay-wrapper">
+    <div class="primary-overlay primary-overlay--second"></div>
+  </div>
+  <div class="main-content main-content--no-padding main-content--about">
+    <div class="about__about-me">
+      <h3 class="underline">A little about me</h3>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, quod! Necessitatibus, consequatur. A voluptatibus cum atque debitis amet, architecto commodi sint eligendi earum, repellendus hic et quod possimus laboriosam mollitia.</p>
+    </div>
+  </div>
+</div>
+<div class="main-view-wrapper main-view-wrapper--about main-view-wrapper--margin">
+  <div class="primary-overlay-wrapper">
+    <div class="primary-overlay primary-overlay--third"></div>
+  </div>
+  <div class="main-content main-content--no-padding main-content--about">
+    <div class="about__about-me">
+      <h3 class="underline underline--no-margin">Technologies I use</h3>
+      <div class="techs-wrapper">
+        <div class="techs">
+          <div class="tech" *ngFor="let tech of techs">
+            <img [src]="tech.img" [alt]="tech.name">
+            <p>{{ tech.name }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

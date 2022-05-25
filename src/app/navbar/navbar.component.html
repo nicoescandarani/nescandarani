@@ -1,37 +1,39 @@
 <nav>
-  <a
-    href="#"
-    routerLink=""
-    routerLinkActive="link--active"
-    [routerLinkActiveOptions]="{exact: true}"
-  >
+  <a (click)="navigateTo('/')">
     <h1>Nicolas Escandarani</h1>
   </a>
-  <ul>
+  <ul #hmbMenu>
     <li>
-      <a href="#" class="link"
-        routerLink=""
-        routerLinkActive="link--active"
-        [routerLinkActiveOptions]="{exact: true}"
+      <a
+        class="link"
+        (click)="navigateTo('/')"
+        [ngClass]="{'link--active': currentRoute === '/'}"
       >
         Home
       </a>
     </li>
     <li>
-      <a href="#" class="link"
-        routerLink="about"
-        routerLinkActive="link--active"
+      <a
+        class="link"
+        (click)="navigateTo('/about')"
+        [ngClass]="{'link--active': currentRoute === '/about'}"
       >
         About
       </a>
     </li>
     <li>
-      <a href="#" class="link"
-        routerLink="works"
-        routerLinkActive="link--active"
+      <a
+        class="link"
+        (click)="navigateTo('/works')"
+        [ngClass]="{'link--active': currentRoute === '/works'}"
       >
         Works
       </a>
     </li>
   </ul>
+  <button #hmbToggle (click)="toggleHmbMenu()" class="hmb-toggle">
+    <span class="hmb-toggle__first"></span>
+    <span class="hmb-toggle__second"></span>
+    <span class="hmb-toggle__third"></span>
+  </button>
 </nav>

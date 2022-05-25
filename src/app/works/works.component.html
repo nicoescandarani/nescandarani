@@ -1,12 +1,12 @@
-<div class="works-wrapper">
-  <div class="works-overlay-wrapper">
-    <div class="works-overlay"></div>
+<div class="main-view-wrapper">
+  <div class="primary-overlay-wrapper">
+    <div class="primary-overlay"></div>
   </div>
-  <div class="works">
+  <div class="main-content">
     <h2>Some of my works</h2>
     <div class="works-list">
       <div *ngFor="let work of works; let i = index" [ngClass]="{'work': true, 'work--inverted': i % 2 === 1}">
-        <div #tilt class="work-card" data-tilt data-tilt-glare data-tilt-max-glare="0.1">
+        <div observeVisibility #intersection="intersection" [ngSwitch]="intersection.isIntersecting" #tilt class="work-card" data-tilt data-tilt-glare data-tilt-max-glare="0.1">
           <a [href]="work.url" target="_blank">
             <div class="work-card__overlay"></div>
             <img [src]="work.image" [alt]="work.title" class="work-card__img">
@@ -27,3 +27,5 @@
     </div>
   </div>
 </div>
+
+<app-footer></app-footer>

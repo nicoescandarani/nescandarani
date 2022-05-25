@@ -25,12 +25,13 @@ h2 {
   font-size: 36px;
   margin-bottom: 70px;
   transform: translateX(-84px);
+  width: calc(100% + 84px);
   opacity: 0;
   animation: move-right-left 0.4s forwards ease-in-out 0.4s;
   text-shadow: 8px 8px 8px #0000004d;
 }
 
-button {
+a {
     padding: 14px;
     max-width: 370px;
     width: 100%;

@@ -2,7 +2,7 @@
   <a (click)="navigateTo('/')">
     <h1>Nicolas Escandarani</h1>
   </a>
-  <ul>
+  <ul #hmbMenu>
     <li>
       <a
         class="link"
@@ -31,4 +31,9 @@
       </a>
     </li>
   </ul>
+  <button #hmbToggle (click)="toggleHmbMenu()" class="hmb-toggle">
+    <span class="hmb-toggle__first"></span>
+    <span class="hmb-toggle__second"></span>
+    <span class="hmb-toggle__third"></span>
+  </button>
 </nav>

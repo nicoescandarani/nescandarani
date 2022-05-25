@@ -11,7 +11,7 @@
 
     img {
       position: absolute;
-      max-width: 300px;
+      max-width: 260px;
       right: 0;
       bottom: 0;
       transform: translateY(30%);
@@ -25,12 +25,13 @@
     p {
       font-size: 30px;
       text-align: end;
+      line-height: 50px;
     }
   }
 }
 
 h3 {
-  font-size: 36px;
+  font-size: 32px;
   margin-bottom: 90px;
   line-height: 50px;
 }
@@ -105,6 +106,129 @@ h3 {
     height: 2px;
     border-radius: 30px;
     background-color: #EEBCFF;
-    animation: underlineIn 0.3s forwards ease-in-out;
+    animation: underlineIn 0.3s forwards ease-in-out 0.4s;
+  }
+
+  &--no-margin {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  h3 {
+    font-size: 30px;
+  }
+
+  .about {
+    &__preamb {
+      p {
+        font-size: 28px;
+      }
+
+      img {
+        max-width: 220px;
+        transform: translateY(16%);
+      }
+    }
+  }
+
+  .techs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  h3 {
+    font-size: 24px;
+    line-height: 40px;
+    margin-bottom: 60px;
+  }
+
+  .about {
+    &__preamb {
+      min-height: 570px;
+    }
+
+    &__about-me {
+      min-height: auto;
+      padding: 36px 0;
+
+      p {
+        font-size: 24px;
+        line-height: 40px;
+      }
+    }
+  }
+
+  .main-content {
+    padding: 0 50px;
+  }
+
+  .techs {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .tech {
+    img {
+      height: 80px;
+      max-width: 80px;
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  .main-content {
+    padding: 0 20px;
+  }
+
+  .about {
+    &__about-me {
+      p {
+        font-size: 20px;
+        line-height: 30px;
+      }
+    }
+  }
+}
+
+@media (max-width: 460px) {
+  h3 {
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 36px;
+  }
+
+  .about {
+    &__preamb {
+      min-height: auto;
+      text-align: right;
+
+      img {
+        position: static;
+        transform: translateY(10%);
+        margin-left: auto;
+      }
+
+      p {
+        font-size: 20px;
+        line-height: 30px;
+      }
+    }
+  }
+
+  .preamb{
+    &__text {
+      text-align: start;
+    }
+  }
+
+  .techs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 300px) {
+  .techs {
+    grid-template-columns: repeat(1, 1fr);
   }
 }

@@ -4,7 +4,7 @@
   max-width: 1728px;
   margin: 0 auto;
   overflow: hidden;
-  min-height: calc(100vh - 260px);
+  min-height: calc(100vh - 240px);
 }
 
 .home-card {
@@ -25,7 +25,8 @@ h2 {
   font-size: 36px;
   margin-bottom: 70px;
   transform: translateX(-84px);
-  animation: move-right-left 0.5s forwards ease-in-out;
+  opacity: 0;
+  animation: move-right-left 0.4s forwards ease-in-out 0.4s;
   text-shadow: 8px 8px 8px #0000004d;
 }
 
@@ -52,4 +53,45 @@ button {
         animation: none;
       }
     }
+}
+
+// ! Breakpoints.
+
+@media (max-width: 870px) {
+  .main-wrapper {
+    padding-left: 60px;
+  }
+
+  .home-card {
+    max-width: none;
+  }
+}
+
+@media (max-width: 540px) {
+  .main-wrapper {
+    min-height: calc(100vh - 220px);
+  }
+
+  .home-card {
+    height: 250px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  button {
+    padding: 10px;
+
+    img {
+      width: 44px;
+      right: -30px;
+    }
+
+    &:hover {
+      img {
+        right: -30px;
+      }
+    }
+  }
 }

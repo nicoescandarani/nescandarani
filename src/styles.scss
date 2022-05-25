@@ -134,3 +134,12 @@ a {
     width: 100%;
   }
 }
+
+// ! Breakpoints
+
+@media (max-width: 870px) {
+  .home-card {
+    max-width: 90%;
+  }
+}
+

@@ -1,5 +1,5 @@
 import { Router, NavigationEnd } from '@angular/router';
-import { Component, OnInit, AfterViewInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -9,6 +9,8 @@ import { Component, OnInit, AfterViewInit, Output, EventEmitter } from '@angular
 export class NavbarComponent implements OnInit, AfterViewInit {
   currentRoute: string = '';
   @Output() navigateEmmit = new EventEmitter<string>();
+  @ViewChild('hmbMenu') hmbMenu: ElementRef | undefined;
+  @ViewChild('hmbToggle') hmbToggle: ElementRef | undefined;
 
   constructor(private router: Router) { }
 
@@ -18,7 +20,14 @@ export class NavbarComponent implements OnInit, AfterViewInit {
         this.currentRoute = event.url;
         console.log(this.currentRoute);
       }
-  });
+    });
+  }
+
+  toggleHmbMenu(): void {
+    if (this.hmbMenu && this.hmbToggle) {
+      this.hmbMenu.nativeElement.classList.toggle('active');
+      this.hmbToggle.nativeElement.classList.toggle('hmb-toggle--active');
+    }
   }
 
   ngAfterViewInit(): void {
@@ -28,6 +37,9 @@ export class NavbarComponent implements OnInit, AfterViewInit {
 
   navigateTo(route: string) {
     if (route !== this.currentRoute) {
+      if (this.hmbMenu?.nativeElement.classList.contains('active')) {
+        this.toggleHmbMenu();
+      }
       this.navigateEmmit.emit(route);
       setTimeout(() => {
         this.router.navigate([route]);

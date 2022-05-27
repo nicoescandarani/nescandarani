@@ -1,3 +1,12 @@
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1480px;
+  padding: 0 40px;
+  margin: 0 auto;
+}
+
 nav {
   position: fixed;
   height: 70px;
@@ -5,9 +14,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1480px;
   margin: 0 auto;
-  padding: 0 40px;
   margin-bottom: 70px;
   background-color: #1C1C1C;
   transition: all 0.3s ease-in-out;
@@ -60,8 +67,11 @@ ul {
 // ! Breakpoints.
 
 @media(max-width: 768px) {
-  nav {
+  .nav-content {
     padding: 50px;
+  }
+
+  nav {
     z-index: 2;
     margin-bottom: 40px;
 
@@ -134,7 +144,7 @@ ul {
 }
 
 @media (max-width: 540px) {
-  nav {
+  .nav-content {
     padding: 0 20px;
   }
 

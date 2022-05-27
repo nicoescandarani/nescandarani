@@ -1,39 +1,41 @@
 <nav [ngClass]="{'transparent': transparentisizeNav}">
-  <a (click)="navigateTo('/')">
-    <h1>Nicolas Escandarani</h1>
-  </a>
-  <ul #hmbMenu [ngClass]="{'active': hmbMenuActive}">
-    <li>
-      <a
-        class="link"
-        (click)="navigateTo('/')"
-        [ngClass]="{'link--active': currentRoute === '/'}"
-      >
-        Home
+  <div class="nav-content">
+    <a (click)="navigateTo('/')">
+      <h1>Nicolas Escandarani</h1>
     </a>
-    </li>
-    <li>
-      <a
-        class="link"
-        (click)="navigateTo('/about')"
-        [ngClass]="{'link--active': currentRoute === '/about'}"
-      >
-        About
+    <ul #hmbMenu [ngClass]="{'active': hmbMenuActive}">
+      <li>
+        <a
+          class="link"
+          (click)="navigateTo('/')"
+          [ngClass]="{'link--active': currentRoute === '/'}"
+        >
+          Home
       </a>
-    </li>
-    <li>
-      <a
-        class="link"
-        (click)="navigateTo('/works')"
-        [ngClass]="{'link--active': currentRoute === '/works'}"
-      >
-        Works
-      </a>
-    </li>
-  </ul>
-  <button #hmbToggle (click)="toggleHmbMenu()" class="hmb-toggle" [ngClass]="{'hmb-toggle--active': hmbMenuActive}">
-    <span class="hmb-toggle__first"></span>
-    <span class="hmb-toggle__second"></span>
-    <span class="hmb-toggle__third"></span>
-  </button>
+      </li>
+      <li>
+        <a
+          class="link"
+          (click)="navigateTo('/about')"
+          [ngClass]="{'link--active': currentRoute === '/about'}"
+        >
+          About
+        </a>
+      </li>
+      <li>
+        <a
+          class="link"
+          (click)="navigateTo('/works')"
+          [ngClass]="{'link--active': currentRoute === '/works'}"
+        >
+          Works
+        </a>
+      </li>
+    </ul>
+    <button #hmbToggle (click)="toggleHmbMenu()" class="hmb-toggle" [ngClass]="{'hmb-toggle--active': hmbMenuActive}">
+      <span class="hmb-toggle__first"></span>
+      <span class="hmb-toggle__second"></span>
+      <span class="hmb-toggle__third"></span>
+    </button>
+  </div>
 </nav>

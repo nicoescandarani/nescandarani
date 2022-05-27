@@ -61,6 +61,11 @@ h2 {
     right: 0;
     top: 40%;
 
+    &--mobile {
+      display: none;
+      pointer-events: none;
+    }
+
     img {
       height: 100%;
       width: 100%;
@@ -256,6 +261,13 @@ h2 {
       pointer-events: all;
       top: 46%;
       left: 0;
+      display: none;
+      pointer-events: none;
+
+      &--mobile {
+        display: block;
+        pointer-events: all;
+      }
     }
   }
 }

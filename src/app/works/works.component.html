@@ -21,6 +21,9 @@
             </div>
           </a>
         </div>
+        <div #previewImg [ngStyle]="{'animation-delay': i === 0 ? i + 's' : (i + 1.5) + 's' }" class="work__preview">
+          <img [src]="work.image" [alt]="work.title">
+        </div>
         <!-- ! Without tilt. -->
         <div class="work-card work-card--mobile">
           <a [href]="work.url" target="_blank">
@@ -36,7 +39,7 @@
             </div>
           </a>
         </div>
-        <div #previewImg [ngStyle]="{'animation-delay': i === 0 ? i + 's' : (i + 1.5) + 's' }" class="work__preview">
+        <div #previewImg [ngStyle]="{'animation-delay': i === 0 ? i + 's' : (i + 1.5) + 's' }" class="work__preview work__preview--mobile">
           <img [src]="work.image" [alt]="work.title">
         </div>
       </div>

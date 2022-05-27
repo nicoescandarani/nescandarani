@@ -77,6 +77,11 @@ h2 {
   transform-style: preserve-3d;
   transform: perspective(1000px);
 
+  &--mobile {
+    display: none;
+    pointer-events: none;
+  }
+
   &:hover {
     .work-card__overlay {
       background-color: #1c1c1cef;
@@ -184,6 +189,14 @@ h2 {
   }
 
   .work-card {
+    display: none;
+    pointer-events: none;
+
+    &--mobile {
+      display: block;
+      pointer-events: all;
+    }
+
     &__short-description {
       margin-bottom: 20px;
     }
@@ -222,7 +235,8 @@ h2 {
 
       + .work__preview {
         height: 200px;
-        width: 60%;
+        max-width: 400px;
+        width: 100%;
         right: 0;
         border-radius: 6px;
         pointer-events: none;
@@ -235,7 +249,8 @@ h2 {
 
     &__preview {
       height: 200px;
-      width: 60%;
+      max-width: 400px;
+      width: 100%;
       margin: 0 auto;
       border-radius: 6px;
       pointer-events: all;

@@ -6,7 +6,23 @@
     <h2>Some of my works</h2>
     <div class="works-list">
       <div *ngFor="let work of works; let i = index" [ngClass]="{'work': true, 'work--inverted': i % 2 === 1}">
-        <div observeVisibility #intersection="intersection" [ngSwitch]="intersection.isIntersecting" #tilt class="work-card" data-tilt data-tilt-glare data-tilt-max-glare="0.1">
+        <!-- ! With tilt. -->
+        <div #tilt class="work-card" data-tilt data-tilt-glare data-tilt-max-glare="0.1">
+          <a [href]="work.url" target="_blank">
+            <div class="work-card__overlay"></div>
+            <img [src]="work.image" [alt]="work.title" class="work-card__img">
+            <div class="work-card__info">
+              <div class="work-card__info-content">
+                <h3>{{ work.title }}</h3>
+                <p class="work-card__short-description">{{ work.shortDescription }}</p>
+                <p class="work-card__description">{{ work.description }}</p>
+                <img #previewImg class="preview-img" src="assets/img/right-arrow.svg" [alt]="'Go to' + work.title + '.'">
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- ! Without tilt. -->
+        <div class="work-card work-card--mobile">
           <a [href]="work.url" target="_blank">
             <div class="work-card__overlay"></div>
             <img [src]="work.image" [alt]="work.title" class="work-card__img">

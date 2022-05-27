@@ -56,9 +56,20 @@ footer {
 
   .footer-nav {
     padding: 20px;
+    padding-right: 0;
   }
 
   .footer-wrapper {
     padding-right: 20px;
+  }
+}
+
+@media (max-width: 340px) {
+  a {
+    font-size: 14px;
+  }
+
+  p {
+    font-size: 12px;
   }
 }

@@ -10,7 +10,7 @@ $animation: overlayAnimation 1s forwards ease-in-out;
 
   &--primary {
     background-color: #1c1c1c;
-    z-index: 4;
+    z-index: 101;
 
     &--active {
       animation: $animation;
@@ -20,12 +20,17 @@ $animation: overlayAnimation 1s forwards ease-in-out;
   &--secondary {
     animation-delay: 0.2s;
     background-color: #2a2b36;
-    z-index: 3;
+    z-index: 100;
 
     &--active {
       animation: $animation 0.2s;
     }
   }
+}
+
+.nav-wrapper {
+  max-width: 1480px;
+  margin: 0 auto;
 }
 
 .main-wrapper {

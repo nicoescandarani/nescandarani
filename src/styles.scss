@@ -111,7 +111,7 @@ a {
   }
 }
 
-@keyframes previewAnimation {
+@keyframes preview-animation {
 	0% {
 		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
 		transform: translatey(0px);
@@ -119,6 +119,21 @@ a {
 	50% {
 		box-shadow: 0 15px 15px 0px rgba(0,0,0,0.2);
 		transform: translatey(-10px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+}
+
+@keyframes preview-animation-2 {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 15px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-4px);
 	}
 	100% {
 		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);

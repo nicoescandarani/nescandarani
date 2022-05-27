@@ -98,3 +98,13 @@ a {
     }
   }
 }
+
+@media (max-width: 340px) {
+  h2 {
+    font-size: 24px;
+  }
+
+  a {
+    font-size: 18px;
+  }
+}

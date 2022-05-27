@@ -41,6 +41,7 @@ a {
     border: 1px solid #EEBCFF;
     border-radius: 6px;
     box-shadow: 4px 4px 12px #00000062;
+
     img {
       position: absolute;
       top: 50%;
@@ -79,14 +80,15 @@ a {
 
   h2 {
     font-size: 30px;
+    margin-bottom: 40px;
   }
 
-  button {
+  a {
     padding: 10px;
 
     img {
-      width: 44px;
-      right: -30px;
+      width: 40px;
+      right: -24px;
     }
 
     &:hover {

@@ -1,13 +1,17 @@
 import { Router, NavigationEnd } from '@angular/router';
-import { Component, OnInit, AfterViewInit, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit, AfterViewInit {
+export class NavbarComponent implements OnInit {
   currentRoute: string = '';
+  transparentisizeNav: boolean = false;
+  currentScrollPosition: number = 0;
+  currentUpScrollPosition: number = 0;
+  hmbMenuActive: boolean = false;
   @Output() navigateEmmit = new EventEmitter<string>();
   @ViewChild('hmbMenu') hmbMenu: ElementRef | undefined;
   @ViewChild('hmbToggle') hmbToggle: ElementRef | undefined;
@@ -21,23 +25,30 @@ export class NavbarComponent implements OnInit, AfterViewInit {
         console.log(this.currentRoute);
       }
     });
+    window.addEventListener('scroll', () => {
+      this.currentScrollPosition = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop;
+      if (this.currentScrollPosition > 110 && !this.hmbMenuActive) {
+        // ! scroll down.
+        if (this.currentScrollPosition > this.currentUpScrollPosition) {
+          this.transparentisizeNav = true;
+        } else {
+          this.transparentisizeNav = false;
+        }
+      }
+      this.currentUpScrollPosition = this.currentScrollPosition;
+    });
   }
 
   toggleHmbMenu(): void {
     if (this.hmbMenu && this.hmbToggle) {
-      this.hmbMenu.nativeElement.classList.toggle('active');
-      this.hmbToggle.nativeElement.classList.toggle('hmb-toggle--active');
+      this.hmbMenuActive = !this.hmbMenuActive;
+      this.transparentisizeNav = false;
     }
-  }
-
-  ngAfterViewInit(): void {
-    // const spheres = document.querySelector('.spheres-canvas') as HTMLElement;
-    // spheres.style.position = 'absolute';
   }
 
   navigateTo(route: string) {
     if (route !== this.currentRoute) {
-      if (this.hmbMenu?.nativeElement.classList.contains('active')) {
+      if (this.hmbMenuActive) {
         this.toggleHmbMenu();
       }
       this.navigateEmmit.emit(route);

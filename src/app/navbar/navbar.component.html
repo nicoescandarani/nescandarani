@@ -1,8 +1,8 @@
-<nav>
+<nav [ngClass]="{'transparent': transparentisizeNav}">
   <a (click)="navigateTo('/')">
     <h1>Nicolas Escandarani</h1>
   </a>
-  <ul #hmbMenu>
+  <ul #hmbMenu [ngClass]="{'active': hmbMenuActive}">
     <li>
       <a
         class="link"
@@ -10,7 +10,7 @@
         [ngClass]="{'link--active': currentRoute === '/'}"
       >
         Home
-      </a>
+    </a>
     </li>
     <li>
       <a
@@ -31,7 +31,7 @@
       </a>
     </li>
   </ul>
-  <button #hmbToggle (click)="toggleHmbMenu()" class="hmb-toggle">
+  <button #hmbToggle (click)="toggleHmbMenu()" class="hmb-toggle" [ngClass]="{'hmb-toggle--active': hmbMenuActive}">
     <span class="hmb-toggle__first"></span>
     <span class="hmb-toggle__second"></span>
     <span class="hmb-toggle__third"></span>

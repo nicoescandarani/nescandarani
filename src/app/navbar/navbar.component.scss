@@ -1,4 +1,7 @@
 nav {
+  position: fixed;
+  height: 70px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -6,14 +9,19 @@ nav {
   margin: 0 auto;
   padding: 0 40px;
   margin-bottom: 70px;
-  height: 70px;
+  background-color: #1C1C1C;
   transition: all 0.3s ease-in-out;
+  z-index: 99;
 
   .logo-wrapper {
     .hmb-toggle {
       display: none;
     }
   }
+}
+
+.transparent {
+  background-color: #1c1c1c8e;
 }
 
 .hmb-toggle {
@@ -102,7 +110,7 @@ ul {
 
   ul {
     position: fixed;
-    top: 140px;
+    top: 70px;
     left: 0;
     background-color: #1C1C1C;
     display: flex;
@@ -116,7 +124,6 @@ ul {
     font-size: 24px;
 
     li {
-      margin-top: -140px;
       margin-bottom: 20px;
     }
   }

@@ -27,7 +27,8 @@ export class WorksComponent implements OnInit, AfterViewInit {
       VanillaTilt.init(item.nativeElement, {
         reverse: true,
         glare: true,
-        perspective: 4000
+        perspective: 4000,
+        gyroscope: true
       });
     });
   }

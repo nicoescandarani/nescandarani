@@ -94,7 +94,7 @@ h2 {
     .work-card__description {
       height: 100%;
       opacity: 1;
-      transform: translateZ(200px);
+      // transform: translateZ(200px);
     }
 
     + .work__preview {
@@ -152,7 +152,7 @@ h2 {
     h3 {
       font-size: 24px;
       margin-bottom: 20px;
-      transform: translateZ(50px);
+      // transform: translateZ(50px);
     }
 
     p {
@@ -166,6 +166,6 @@ h2 {
     overflow: hidden;
     opacity: 0;
     transition: $transition;
-    transform: translateZ(200px);
+    // transform: translateZ(200px);
   }
 }

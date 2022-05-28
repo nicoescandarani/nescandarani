@@ -1,15 +1,32 @@
 $size: 700px;
 
+canvas {
+  cursor: pointer;
+}
+
 .canvas-wrapper {
   height: $size;
   width: $size;
   transition: all 0.3s ease-in-out;
+  padding: 0 40px;
+}
+
+@media (max-width: 768px) {
+  .canvas-wrapper {
+    padding: 0 50px;
+  }
 }
 
 @media (max-width: 700px) {
   .canvas-wrapper {
     height: 500px;
     width: 500px;
+  }
+}
+
+@media (max-width: 540px) {
+  .canvas-wrapper {
+    padding: 0 20px;
   }
 }
 

@@ -82,10 +82,9 @@ export class MountainsComponent implements OnInit, AfterViewInit {
     scene.add(camera);
 
     // ! Controls
-    // const controls = canvas ? new OrbitControls(camera, (canvas) as HTMLElement) : undefined;
-    // if (controls) controls.enableDamping = true;
-    // if (controls) controls.maxPolarAngle = Math.PI / 1.8;
-    // if (controls) controls.minPolarAngle = Math.PI / 1.8;
+    const controls = this.canvas ? new OrbitControls(camera, (this.canvas?.nativeElement) as HTMLElement) : undefined;
+    if (controls) controls.enableDamping = true;
+    if (controls) controls.enablePan = false;
 
     // ! Renderer.
     const renderer = new THREE.WebGLRenderer({
@@ -111,10 +110,14 @@ export class MountainsComponent implements OnInit, AfterViewInit {
 
       // ! Update Objects
       plane.rotation.z = 0.1 * elapsedTime;
-      plane.material.displacementScale = 0.3 + mouseY * 0.0002;
+      plane.material.displacementScale = 0.3 + mouseY * 0.0005;
+
+      if (window.innerWidth < 768) {
+        plane.material.displacementScale = 0.5;
+      }
 
       // ! Update Orbital Controls
-      // if (controls) controls.update();
+      if (controls) controls.update();
 
       // ! Render
       renderer.render(scene, camera);

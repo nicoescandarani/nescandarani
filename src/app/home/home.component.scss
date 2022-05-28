@@ -72,7 +72,7 @@ a {
     }
     &:hover {
       img {
-        right: -80px;
+        right: -50px;
         animation: none;
       }
     }
@@ -90,7 +90,7 @@ a {
 }
 
 @media (max-width: 870px) {
-  .main-wrapper {
+  .home-card-wrapper {
     padding-left: 60px;
   }
 
@@ -123,7 +123,7 @@ a {
 
     &:hover {
       img {
-        right: -30px;
+        right: -24px;
       }
     }
   }

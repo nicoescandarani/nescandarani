@@ -150,6 +150,15 @@ a {
   }
 }
 
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 // ! Breakpoints
 
 @media (max-width: 870px) {

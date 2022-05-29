@@ -11,6 +11,8 @@ export class MountainsComponent implements OnInit, AfterViewInit {
   @ViewChild('wrapper') wrapper: ElementRef  | undefined;
   @ViewChild('canvas') canvas: ElementRef  | undefined;
 
+  zoom:number = 0.03;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -67,7 +69,7 @@ export class MountainsComponent implements OnInit, AfterViewInit {
       // ! Update camera
       camera.aspect = sizes.width / sizes.height;
       camera.updateProjectionMatrix();
-    
+
       // ! Update renderer
       renderer.setSize(sizes.width, sizes.height);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -108,12 +110,23 @@ export class MountainsComponent implements OnInit, AfterViewInit {
     const tick = () => {
       const elapsedTime = clock.getElapsedTime();
 
+
       // ! Update Objects
       plane.rotation.z = 0.1 * elapsedTime;
       plane.material.displacementScale = 0.3 + mouseY * 0.0005;
 
       if (window.innerWidth < 768) {
         plane.material.displacementScale = 0.5;
+      }
+
+      // ! Enter zoom.
+      if (this.zoom < 1) {
+        this.zoom = this.zoom + 0.0024;
+        camera.zoom = this.zoom;
+        if (this.zoom >= 1) {
+          camera.zoom = 1;
+        }
+        camera.updateProjectionMatrix();
       }
 
       // ! Update Orbital Controls

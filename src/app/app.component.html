@@ -2,9 +2,10 @@
   <div #overlayPrimary class="overlay overlay--primary"></div>
   <div #overlaySecondary class="overlay overlay--secondary"></div>
   <div class="nav-wrapper">
-    <app-navbar (navigateEmmit)="hola()"></app-navbar>
+    <app-navbar (navigateEmmit)="animateRoute()"></app-navbar>
   </div>
-  <div class="main-container calc-height" [@slideInAnimation]="o.isActivated ? o.activatedRoute : ''">
-    <router-outlet #o="outlet" class="calc-height"></router-outlet>
+  <div class="main-container calc-height">
+    <router-outlet class="calc-height"></router-outlet>
   </div>
+  <app-loader (doneAnimations)="doneAnimations()" *ngIf="showLoader"></app-loader>
 </div>

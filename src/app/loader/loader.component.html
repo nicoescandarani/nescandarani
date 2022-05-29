@@ -1,0 +1,95 @@
+<div #wrapper class="loader-wrapper">
+  <div class="code">
+    <span><span class="inline symbol">></span>portfolio@1.7.8 start</span>
+    <span class="margin"><span class="inline symbol">></span>ng serve</span>
+
+    <div #firstLoader class="loader first-loader hide margin margin--large">
+      <div class="spinner"></div>
+      <span>Generating browser application bundles (phase: <span class="inline">{{phase}}</span>) ...</span>
+    </div>
+
+    <div #first class="first hide">
+      <span><span class="margin green-text inline symbol">✔</span>Browser application bundle generation complete.</span>
+    </div>
+
+    <!-- ! Table -->
+    <table #firstTable class="first-table margin margin--large hide">
+      <tr>
+        <th>Initial Chunk Files</th>
+        <th>Names</th>
+        <th>Size</th>
+      </tr>
+      <tr>
+        <td class="green-text">vendor.js</td>
+        <td>vendor</td>
+        <td class="blue-text">4.07 MB</td>
+      </tr>
+      <tr>
+        <td class="green-text">polyfills.js</td>
+        <td>polyfills</td>
+        <td class="blue-text">333.97 kB</td>
+      </tr>
+      <tr>
+        <td class="green-text">styles.css, styles.js</td>
+        <td>styles</td>
+        <td class="blue-text">216.67 kB</td>
+      </tr>
+      <tr>
+        <td class="green-text">main.js</td>
+        <td>main</td>
+        <td class="blue-text">155.23 kB</td>
+      </tr>
+      <tr>
+        <td class="green-text">scripts.js</td>
+        <td>scripts</td>
+        <td class="blue-text">15.25 kB</td>
+      </tr>
+      <tr class="margin">
+        <td class="green-text">runtime.js</td>
+        <td>runtime</td>
+        <td class="blue-text">6.85 kB</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Initial Total</td>
+        <td>4.78 MB</td>
+      </tr>
+    </table>
+
+    <div #second class="second hide">
+      <span class="margin margin--large">Build at: <span class="inline bold">2022-05-29T07:33:24.198Z</span> - Hash: <span class="inline bold">ed8ce3c33c65d825</span> - Time: <span class="inline bold">2404</span> ms</span>
+      <span class="margin margin--large">** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **</span>
+    </div>
+
+    <span #third class="hide"><span class="green-text inline symbol">✔</span>Compiled successfully.</span>
+    <div #secondLoader class="loader second-loader hide margin margin--large">
+      <div class="spinner"></div>
+      <span>Generating browser application bundles (phase: <span class="inline">{{phase}}</span>) ...</span>
+    </div>
+    <span #fourth class="hide"><span class="margin green-text inline symbol">✔</span>Browser application bundle generation complete.</span>
+
+    <!-- ! Table -->
+    <table #secondTable class="second-table margin margin--large hide">
+      <tr>
+        <th>Initial Chunk Files</th>
+        <th>Names</th>
+        <th>Size</th>
+      </tr>
+      <tr class="margin">
+        <td class="green-text">runtime.js</td>
+        <td>runtime</td>
+        <td class="blue-text">6.85 kB</td>
+      </tr>
+    </table>
+
+    <div #fifth class="fifth hide">
+      <span class="margin margin--large">5 unchanged chunks</span>
+      <span class="margin margin--large">Build at: <span class="inline bold">2022-05-29T08:03:10.735Z</span> - Hash: <span class="inline bold">bba6a17d4c30769c</span> - Time: <span class="inline bold">223</span> ms</span>
+    </div>
+
+    <div #sixth class="sixth hide">
+      <span><span class="green-text inline symbol">✔</span>Compiled successfully.</span>
+      <span><span class="margin green-text inline symbol">✔</span>Browser application bundle generation complete.</span>
+    </div>
+  </div>
+</div>

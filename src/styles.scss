@@ -1,3 +1,5 @@
+$overlayShadow: 4px -4px 10px #29292971;
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -73,11 +75,13 @@ a {
   &--second {
     width: 84%;
     background-color: #32323b;
+    box-shadow: $overlayShadow;
   }
 
   &--third {
     width: 88%;
     background-color: #3d3d47;
+    box-shadow: $overlayShadow;
   }
 }
 

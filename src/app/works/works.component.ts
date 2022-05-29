@@ -14,8 +14,7 @@ export class WorksComponent implements OnInit, AfterViewInit {
   mathRef: Math = Math;
   @ViewChildren('tilt') tilt: QueryList<ElementRef> | undefined;
   @ViewChildren('previewImg') previewImg: QueryList<ElementRef> | undefined;
-  hola = 2;
-  
+
   constructor(private infoService: InfoService, private animationsService: AnimationsService) { }
 
   ngOnInit(): void {

@@ -67,7 +67,7 @@ a {
       position: absolute;
       top: 50%;
       right: -40px;
-      transition: all 0.3s ease-in-out;
+      transition: all 0.15s ease-in-out;
       transform: translateY(-50%);
     }
     &:hover {
@@ -85,11 +85,15 @@ a {
     position: absolute;
     top: 0;
     left: 0;
-    transform: translateY(-20%);
+    transform: translateY(-10%);
   }
 }
 
 @media (max-width: 870px) {
+  app-mountains {
+    transform: translateY(-14%);
+  }
+
   .home-card-wrapper {
     padding-left: 60px;
   }

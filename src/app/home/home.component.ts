@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, Input } from '@angular/core';
 import VanillaTilt from 'vanilla-tilt';
 import * as THREE from 'three';
 
@@ -7,19 +7,19 @@ import * as THREE from 'three';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit, AfterViewInit {
-  // @ViewChild('tilt') tilt: ElementRef | undefined;
+export class HomeComponent implements OnInit {
+  _startAnimating: boolean = false;
+
+  @Input()
+  set startAnimating(value: boolean) {
+    this._startAnimating = value;
+  }
+
+  get startAnimating(): boolean {
+    return this._startAnimating;
+  }
 
   constructor() { }
 
   ngOnInit(): void { }
-
-  ngAfterViewInit(): void {
-    // VanillaTilt.init(this.tilt?.nativeElement, {
-    //   reverse: true,
-    //   perspective: 2000,
-    //   max: 7,
-    //   gyroscope: true
-    // });
-  }
 }

@@ -1,14 +1,27 @@
-$size: 700px;
+$height: 590px;
+$width: 700px;
 
 canvas {
   cursor: pointer;
+  // animation: zoom 4s forwards ease-in-out 1s;
 }
 
 .canvas-wrapper {
-  height: $size;
-  width: $size;
+  height: $height;
+  width: $width;
   transition: all 0.3s ease-in-out;
   padding: 0 40px;
+}
+
+@keyframes zoom {
+  0% {
+    height: 100vh;
+    width: 100%;
+  }
+  100% {
+    height: $height;
+    width: $width;
+  }
 }
 
 @media (max-width: 768px) {

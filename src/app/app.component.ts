@@ -1,50 +1,38 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { NavigationEnd, NavigationStart, Router } from '@angular/router';
-import { slideInAnimation, slider } from './app-animation';
+import {
+  Component,
+  OnInit,
+  AfterViewInit,
+  ViewChild,
+  ElementRef
+} from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  animations: [ slideInAnimation ]
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  showOverlay = false;
-
   @ViewChild('overlayPrimary') overlayPrimary: ElementRef | undefined;
   @ViewChild('overlaySecondary') overlaySecondary: ElementRef | undefined;
 
-  constructor(private router: Router) { }
+  showOverlay = false;
+  showLoader = true;
 
-  hola() {
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  doneAnimations(): void {
+    this.showLoader = false;
+  }
+
+  animateRoute() {
     this.overlayPrimary?.nativeElement.classList.remove('overlay--primary--active');
     this.overlaySecondary?.nativeElement.classList.remove('overlay--secondary--active');
     setTimeout(() => {
       this.overlayPrimary?.nativeElement.classList.add('overlay--primary--active');
       this.overlaySecondary?.nativeElement.classList.add('overlay--secondary--active');
     }, 0);
-  }
-
-  ngOnInit(): void {
-    // this.router.events.subscribe(event => {
-    //   if (event instanceof NavigationStart) {
-    //     this.overlayPrimary?.nativeElement.classList.remove('overlay--primary--active');
-    //     this.overlaySecondary?.nativeElement.classList.remove('overlay--secondary--active');
-    //     setTimeout(() => {
-    //       this.overlayPrimary?.nativeElement.classList.add('overlay--primary--active');
-    //       this.overlaySecondary?.nativeElement.classList.add('overlay--secondary--active');
-    //     }, 0);
-    //   }
-    //   // if (event instanceof NavigationEnd) {
-    //     // this.overlayPrimary?.nativeElement.classList.remove('overlay--primary--active');
-    //     // this.overlaySecondary?.nativeElement.classList.remove('overlay--secondary--active');
-    //   //   console.log('NavigationEnd');
-    //   //   console.log(this.overlayPrimary);
-    //   // }
-    // });
-  }
-
-  prepareRoute(outlet: any) {
-    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
   }
 }

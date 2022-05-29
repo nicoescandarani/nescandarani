@@ -182,12 +182,14 @@ table {
 @media (max-width: 768px) {
   .loader-wrapper {
     font-size: 16px;
+    padding: 50px;
   }
 }
 
 @media (max-width: 540px) {
   .loader-wrapper {
     font-size: 14px;
+    padding: 20px;
   }
 }
 

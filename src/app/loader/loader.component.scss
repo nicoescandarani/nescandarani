@@ -1,4 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 $green: #19ed75;
+
+* {
+  font-family: 'Roboto Mono', monospace;
+}
 
 span {
   display: block;

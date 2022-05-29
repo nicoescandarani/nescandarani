@@ -83,9 +83,9 @@ export class LoaderComponent implements OnInit, AfterViewInit {
       this.sixth?.nativeElement.classList.add('show');
       this.scrollToBottom();
     }, 5000);
-    // setTimeout(() => {
-    //   this.doneAnimations.emit(true);
-    // }, 6000);
+    setTimeout(() => {
+      this.doneAnimations.emit(true);
+    }, 6000);
   }
 
   scrollToBottom(): void {

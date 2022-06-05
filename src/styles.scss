@@ -28,6 +28,51 @@ a {
 
 // ! Classes.
 
+.color-main-wrapper {
+  position: relative;
+}
+
+.color-main {
+  background-color: #2A2B36;
+  z-index: -1;
+  max-width: 40%;
+  width: 100%;
+  position: absolute;
+
+  &--animation {
+    transform: translateX(-1000%);
+    animation: move-right-left-normal 0.5s forwards 0.4s;
+  }
+
+  &--right {
+    right: 0;
+  }
+
+  &--left {
+    left: 0;
+  }
+
+  &--auto-height {
+    height: 100%;
+  }
+
+  &--footer {
+    height: 110px;
+  }
+
+  &--home {
+    height: 320px;
+  }
+
+  &--second {
+    background-color: #32323b;
+  }
+
+  &--third {
+    background-color: #3d3d47;
+  }
+}
+
 .main-view-wrapper {
   min-height: 100vh;
   max-width: 1728px;
@@ -82,6 +127,10 @@ a {
     width: 88%;
     background-color: #3d3d47;
     box-shadow: $overlayShadow;
+  }
+
+  &--no-shadow {
+    box-shadow: none;
   }
 }
 

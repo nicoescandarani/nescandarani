@@ -26,6 +26,7 @@ app-mountains {
   justify-content: flex-end;
   max-width: 1728px;
   width: 100%;
+  margin: 0 auto;
 }
 
 .home-card {
@@ -106,6 +107,10 @@ a {
 @media (max-width: 540px) {
   .main-wrapper {
     min-height: calc(100vh - 220px);
+  }
+
+  .color-main {
+    height: 250px;
   }
 
   .home-card {

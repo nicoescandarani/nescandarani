@@ -17,6 +17,13 @@ export class InfoService {
       image: 'assets/img/GuessTheNumberGame.png',
     },
     {
+      url: 'https://nicoescandarani.github.io/password-generator/',
+      title: 'Password Generator',
+      shortDescription: 'A password generator',
+      description: 'It generates a random password with a given length and parameters.',
+      image: 'assets/img/password-generator.png'
+    },
+    {
       url: 'https://nicoescandarani.github.io/this-is-a-mug/',
       title: 'This is a mug',
       shortDescription: 'Three.js mug project',

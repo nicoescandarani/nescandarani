@@ -28,6 +28,13 @@ a {
 
 // ! Classes.
 
+.ellipsis-background {
+  background-image: url("/assets/img/ellipsis.png");
+  background-repeat: repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 .color-main-wrapper {
   position: relative;
 }

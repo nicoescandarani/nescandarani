@@ -20,6 +20,7 @@ import { NgtSobaOrbitControlsModule } from '@angular-three/soba/controls';
 import { ObserveVisibilityDirective } from './directives/observe-visibility.directive';
 import { MountainsComponent } from './mountains/mountains.component';
 import { LoaderComponent } from './loader/loader.component';
+import { SafeUrlPipe } from './pipes/safe-url.pipe';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { LoaderComponent } from './loader/loader.component';
     SpheresCanvasComponent,
     ObserveVisibilityDirective,
     MountainsComponent,
-    LoaderComponent
+    LoaderComponent,
+    SafeUrlPipe
   ],
   imports: [
     BrowserModule,

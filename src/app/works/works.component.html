@@ -5,47 +5,74 @@
       <div class="primary-overlay"></div>
     </div>
     <div class="main-content">
-      <h2>Some of my projects</h2>
-      <div class="works-list">
-        <div *ngFor="let work of works; let i = index" [ngClass]="{'work': true, 'work--inverted': i % 2 === 1}">
-          <!-- ! With tilt. -->
-          <div #tilt class="work-card" data-tilt data-tilt-glare data-tilt-max-glare="0.1">
-            <a [href]="work.url" target="_blank">
-              <div class="work-card__overlay"></div>
-              <img [src]="work.image" [alt]="work.title" class="work-card__img">
-              <div class="work-card__info">
-                <div class="work-card__info-content">
-                  <h3>{{ work.title }}</h3>
-                  <p class="work-card__short-description">{{ work.shortDescription }}</p>
-                  <p class="work-card__description">{{ work.description }}</p>
-                  <img #previewImg class="preview-img" src="assets/img/right-arrow.svg" [alt]="'Go to' + work.title + '.'">
-                </div>
-              </div>
-            </a>
-          </div>
-          <div #previewImg [ngStyle]="{'animation-delay': i === 0 ? i + 's' : (i + 1.5) + 's' }" class="work__preview">
-            <img [src]="work.image" [alt]="work.title">
-          </div>
-          <!-- ! Without tilt. -->
-          <div class="work-card work-card--mobile">
-            <a [href]="work.url" target="_blank">
-              <div class="work-card__overlay"></div>
-              <img [src]="work.image" [alt]="work.title" class="work-card__img">
-              <div class="work-card__info">
-                <div class="work-card__info-content">
-                  <h3>{{ work.title }}</h3>
-                  <p class="work-card__short-description">{{ work.shortDescription }}</p>
-                  <p class="work-card__description">{{ work.description }}</p>
-                  <img #previewImg class="preview-img" src="assets/img/right-arrow.svg" [alt]="'Go to' + work.title + '.'">
-                </div>
-              </div>
-            </a>
-          </div>
-          <div #previewImg [ngStyle]="{'animation-delay': i === 0 ? i + 's' : (i + 1.5) + 's' }" class="work__preview work__preview--mobile">
-            <img [src]="work.image" [alt]="work.title">
-          </div>
+      <!-- ! Tabs Selector -->
+      <div class="main-content__tabs-selector-wrapper">
+        <div class="main-content__tabs-selector">
+          <button class="main-content__tabs-selector__button" (click)="selectTab('projects')" [ngClass]="{'main-content__tabs-selector--active-tab': selectedTemplate === 'projects'}">Projects</button>
+          <button class="main-content__tabs-selector__button" (click)="selectTab('codepens')" [ngClass]="{'main-content__tabs-selector--active-tab': selectedTemplate === 'codepens'}">Codepens</button>
         </div>
       </div>
+
+      <!-- ! Template Outlet -->
+      <ng-container [ngTemplateOutlet]="selectedTemplate === 'projects' ? projects : codepens"></ng-container>
+
+      <!-- ! Projects -->
+      <ng-template #projects>
+        <h2>Some of my side projects</h2>
+        <div class="works-list">
+          <div *ngFor="let work of works; let i = index" [ngClass]="{'work': true, 'work--inverted': i % 2 === 1}">
+            <!-- ! With tilt. -->
+            <div #tilt class="work-card" data-tilt data-tilt-glare data-tilt-max-glare="0.1">
+              <a [href]="work.url" target="_blank">
+                <div class="work-card__overlay"></div>
+                <img [src]="work.image" [alt]="work.title" class="work-card__img">
+                <div class="work-card__info">
+                  <div class="work-card__info-content">
+                    <h3>{{ work.title }}</h3>
+                    <p class="work-card__short-description">{{ work.shortDescription }}</p>
+                    <p class="work-card__description">{{ work.description }}</p>
+                    <img #previewImg class="preview-img" src="assets/img/right-arrow.svg" [alt]="'Go to' + work.title + '.'">
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div #previewImg [ngStyle]="{'animation-delay': i === 0 ? i + 's' : (i + 1.5) + 's' }" class="work__preview">
+              <img [src]="work.image" [alt]="work.title">
+            </div>
+            <!-- ! Without tilt. -->
+            <div class="work-card work-card--mobile">
+              <a [href]="work.url" target="_blank">
+                <div class="work-card__overlay"></div>
+                <img [src]="work.image" [alt]="work.title" class="work-card__img">
+                <div class="work-card__info">
+                  <div class="work-card__info-content">
+                    <h3>{{ work.title }}</h3>
+                    <p class="work-card__short-description">{{ work.shortDescription }}</p>
+                    <p class="work-card__description">{{ work.description }}</p>
+                    <img #previewImg class="preview-img" src="assets/img/right-arrow.svg" [alt]="'Go to' + work.title + '.'">
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div #previewImg [ngStyle]="{'animation-delay': i === 0 ? i + 's' : (i + 1.5) + 's' }" class="work__preview work__preview--mobile">
+              <img [src]="work.image" [alt]="work.title">
+            </div>
+          </div>
+        </div>
+      </ng-template>
+
+      <!-- ! Codepens -->
+      <ng-template #codepens>
+        <h2>Some Codepens</h2>
+        <div *ngFor="let codepen of codepensArray; let i = index" class="codepen-wrapper">
+          <div class="loader" *ngIf="!loadedCodePens.includes(i)"></div>
+          <iframe [height]="codepen.height" style="width: 100%;" scrolling="no" [title]="codepen.title" [src]="codepen.src | safeUrl" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true" (load)="showHideLoader(i)">
+            See the Pen <a [href]="codepen.href">
+            {{codepen.title}}</a> by nicoescandarani (<a href="https://codepen.io/nicoescandarani">@nicoescandarani</a>)
+            on <a href="https://codepen.io">CodePen</a>.
+          </iframe>
+        </div>
+      </ng-template>
     </div>
   </div>
 </div>

@@ -7,5 +7,7 @@
   <div class="main-container calc-height">
     <router-outlet class="calc-height"></router-outlet>
   </div>
-  <app-loader (doneAnimations)="doneAnimations()" *ngIf="showLoader"></app-loader>
+
+  <!-- ! To prevent animation change the *ngIf to false. By default should be showLoader -->
+  <app-loader (doneAnimations)="doneAnimations()" *ngIf="false"></app-loader>
 </div>

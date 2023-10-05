@@ -1,3 +1,4 @@
+import { Codepen } from './../interfaces/codepen';
 import { Tech } from '../interfaces/tech';
 import { Work } from '../interfaces/work';
 import { Injectable } from '@angular/core';
@@ -6,8 +7,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class InfoService {
-  constructor() { }
-
   works: Work[] = [
     {
       url: 'https://nescanda.com/guessTheNumber/',
@@ -22,6 +21,13 @@ export class InfoService {
       shortDescription: 'A password generator',
       description: 'It generates a random password with a given length and parameters.',
       image: 'assets/img/password-generator.png'
+    },
+    {
+      url: 'https://eescandarani.com/',
+      title: "Ezequiel Escandarani's portfolio",
+      shortDescription: 'Profesional portfolio',
+      description: 'Designer: Ezequiel Escandarani',
+      image: 'assets/img/ezequiel-escandaranis-portfolio.png',
     },
     {
       url: 'https://nicoescandarani.github.io/this-is-a-mug/',
@@ -51,15 +57,7 @@ export class InfoService {
       description: 'Simple and fun tic - tac - toe game with mouse parallax.',
       image: 'assets/img/Tictactoe.jpeg',
     }
-    // {
-    //   url: 'https://www.nescanda.com/space/',
-    //   title: 'Let´s Go To Space',
-    //   shortDescription: 'Parallax characters',
-    //   description: 'Simple and fun interactive website with mouse parallax and animations. Try clicking the astronaut in the middle.',
-    //   image: 'assets/img/Space.png',
-    // }
   ];
-
   techs: Tech[] = [
     {
       name: 'Angular',
@@ -98,6 +96,26 @@ export class InfoService {
       img: 'assets/img/figma.svg'
     }
   ];
+  codepens: Codepen[] = [
+    {
+      height: 300,
+      title: 'Piano',
+      src: 'https://codepen.io/nicoescandarani/embed/dyjPxZp?default-tab=result&theme-id=dark',
+      href: 'https://codepen.io/nicoescandarani/pen/dyjPxZp'
+    },
+    {
+      height: 300,
+      title: '8bit Text Input',
+      src: 'https://codepen.io/nicoescandarani/embed/NWBPQyz?default-tab=result&theme-id=dark',
+      href: 'https://codepen.io/nicoescandarani/pen/NWBPQyz'
+    },
+    {
+      height: 530,
+      title: 'Navbar Links',
+      src: 'https://codepen.io/nicoescandarani/embed/jOpEjqV?default-tab=result&theme-id=dark',
+      href: 'https://codepen.io/nicoescandarani/pen/jOpEjqV'
+    }
+  ]
 
   getWorks(): Work[] {
     return this.works;
@@ -105,5 +123,9 @@ export class InfoService {
   
   getTechs(): Tech[] {
     return this.techs;
+  }
+
+  getCodepens(): Codepen[] {
+    return this.codepens;
   }
 }
